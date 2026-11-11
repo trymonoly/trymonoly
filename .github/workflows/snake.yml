@@ -1,0 +1,61 @@
+name: Update contribution snake
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 1 * * *"
+  push:
+    branches: [main, master]
+    paths:
+      - README.md
+      - .github/workflows/snake.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    if: github.repository_owner == 'trymonoly'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Generate light and dark animations
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg
+            dist/snake-dark.svg?palette=github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update animation assets
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const fs = require('node:fs');
+            const { owner, repo } = context.repo;
+            const branch = context.payload.repository.default_branch;
+            for (const name of ['snake.svg', 'snake-dark.svg']) {
+              const path = `assets/${name}`;
+              const content = fs.readFileSync(`dist/${name}`);
+              let sha;
+              try {
+                const { data } = await github.rest.repos.getContent({
+                  owner, repo, path, ref: branch,
+                });
+                if (Buffer.from(data.content, 'base64').equals(content)) continue;
+                sha = data.sha;
+              } catch (error) {
+                if (error.status !== 404) throw error;
+              }
+              await github.rest.repos.createOrUpdateFileContents({
+                owner, repo, path, branch, sha,
+                message: `chore: refresh ${name}`,
+                content: content.toString('base64'),
+              });
+            }

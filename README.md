@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/trymonoly"><img src="./assets/lang-zh-active.svg" width="110" height="34" alt="简体中文（当前语言）" /></a>
-  <a href="https://github.com/trymonoly/trymonoly/blob/main/README.en.md"><img src="./assets/lang-en-inactive.svg" width="110" height="34" alt="Switch to English" /></a>
+  <a href="https://github.com/trymonoly"><img src="./assets/lang-zh-active.svg" width="88" height="27" alt="简体中文（当前语言）" /></a>
+  <a href="https://github.com/trymonoly/trymonoly/blob/main/README.en.md"><img src="./assets/lang-en-inactive.svg" width="88" height="27" alt="Switch to English" /></a>
 </p>
 
 <p align="center">

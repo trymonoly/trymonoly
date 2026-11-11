@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="228" viewBox="0 0 1200 228" role="img" aria-labelledby="title desc">
+  <title id="title">Hi, I'm trymonoly</title>
+  <desc id="desc">Security enthusiast. Code auditing, AI Agent research, antivirus evasion, and tool development.</desc>
+  <defs>
+    <linearGradient id="line"><stop stop-color="#58a6ff"/><stop offset=".45" stop-color="#3fb950"/><stop offset="1" stop-color="#bc8cff"/></linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M 28 0 H 0 V 28" fill="none" stroke="#1c2730" stroke-width=".7"/></pattern>
+  </defs>
+  <rect x=".5" y=".5" width="1199" height="227" rx="14" fill="#0d1117" stroke="#30363d"/>
+  <rect x="780" y="1" width="419" height="226" rx="14" fill="url(#grid)"/>
+  <path d="M1 42H1199" stroke="#30363d"/>
+  <circle cx="25" cy="22" r="5" fill="#ff7b72"/><circle cx="43" cy="22" r="5" fill="#e3b341"/><circle cx="61" cy="22" r="5" fill="#3fb950"/>
+  <g font-family="'Cascadia Code',Consolas,monospace">
+    <text x="88" y="27" font-size="13" fill="#8b949e">trymonoly / README.en.md</text>
+    <text x="36" y="81" font-size="13" letter-spacing="2" fill="#3fb950">$ whoami</text>
+    <text x="33" y="135" font-size="44" font-weight="700" fill="#f0f6fc">Hi, I'm <tspan fill="#58a6ff">trymonoly</tspan><tspan fill="#3fb950">_</tspan></text>
+  </g>
+  <text x="36" y="175" font-family="'Microsoft YaHei','Noto Sans CJK SC',sans-serif" font-size="19" fill="#a8b3c2">Security enthusiast · Finding answers in code. Staying curious through practice.</text>
+  <g transform="translate(1025 78)" fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M0 0L48 17V49C48 79 24 95 0 106C-24 95-48 79-48 49V17Z" fill="#0e2119"/>
+    <path d="M-20 51L-5 66L23 36" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <rect x="36" y="204" width="1128" height="2" rx="1" fill="url(#line)"/>
+</svg>
